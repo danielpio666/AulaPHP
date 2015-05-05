@@ -8,7 +8,7 @@
 <meta charset="utf-8" />
 <meta name="description" content="Curso PHP fase 1" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Curso Fase 1</title>
+<title>Curso Fase 2</title>
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="css/estilo.css" />
 
@@ -26,15 +26,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#" class="navbar-brand">Fase 1</a>
+            <a href="#" class="navbar-brand">Fase 2</a>
 		</div>                
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li <? if($pag == 'home') 		{ ?> class="active" <? } ?>><a href="index.php?pagina=home">Home</a></li>
-                <li <? if($pag == 'empresa') 	{ ?> class="active" <? } ?>><a href="index.php?pagina=empresa">Empresa</a></li>
-                <li <? if($pag == 'produtos') 	{ ?> class="active" <? } ?>><a href="index.php?pagina=produtos">Produtos</a></li>
-                <li <? if($pag == 'servicos') 	{ ?> class="active" <? } ?>><a href="index.php?pagina=servicos">Serviços</a></li>
-                <li <? if($pag == 'contato') 	{ ?> class="active" <? } ?>><a href="index.php?pagina=contato">Contato</a></li>
+                <li <? if($pag == 'home') 		{ ?> class="active" <? } ?>><a href="home">Home</a></li>
+                <li <? if($pag == 'empresa') 	{ ?> class="active" <? } ?>><a href="empresa">Empresa</a></li>
+                <li <? if($pag == 'produtos') 	{ ?> class="active" <? } ?>><a href="produtos">Produtos</a></li>
+                <li <? if($pag == 'servicos') 	{ ?> class="active" <? } ?>><a href="servicos">Serviços</a></li>
+                <li <? if($pag == 'contato') 	{ ?> class="active" <? } ?>><a href="contato">Contato</a></li>
             </ul>
         </div>
     </nav>
