@@ -40,7 +40,7 @@
     </nav>
     
     <ol class="breadcrumb">
-    	<li><a href="index.php?pagina=home">Home</a>
+    	<li><a href="home">Home</a>
         <li class="active"><?=strtoupper($pag)?></li>  
     </ol>
     

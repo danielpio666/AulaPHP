@@ -1,7 +1,7 @@
 <span class="col-lg-6  col-lg-offset-3">
 <h2>Contato</h2>
 
-<form name="frm_contato" id="frm_contato" method="post" action="index.php?pagina=enviar">
+<form name="frm_contato" id="frm_contato" method="post" action="enviar">
 
 	<div class="form-group">
     	<label for="iNome">Name</label>
