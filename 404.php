@@ -1,3 +1,3 @@
-<? header("HTTP/1.0 404 Not Found"); ?>
-<span class="col-lg-6  col-lg-offset-3">
-<div class="alert alert-danger" role="alert">Erro <?=http_response_code()?> - Pagina n&atilde;o encontrada !!!</div>
+<?php http_response_code(404); ?>
+<span class="col-lg-6 col-lg-offset-3">
+<div class="alert alert-danger" role="alert">Erro 404 - Pagina não encontrada !!!</div>
