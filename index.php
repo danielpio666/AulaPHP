@@ -1,4 +1,6 @@
 <?php
+	require_once "conexao.php";
+	$conect = conexaoDB();
 	date_default_timezone_set('America/Sao_Paulo');
 	$pag = (!isset($_GET['pagina']) ? 'home' : $_GET['pagina']);
 ?>
@@ -36,6 +38,13 @@
                 <li <? if($pag == 'servicos') 	{ ?> class="active" <? } ?>><a href="servicos">Serviços</a></li>
                 <li <? if($pag == 'contato') 	{ ?> class="active" <? } ?>><a href="contato">Contato</a></li>
             </ul>
+        
+            <form class="navbar-form navbar-left" role="search" action="pesquisa" method="post">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Procurar" name="txt_search" >
+              </div>
+              <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </form>
         </div>
     </nav>
     
