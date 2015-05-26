@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#" class="navbar-brand">Fase 2</a>
+            <a href="#" class="navbar-brand">Fase 4</a>
 		</div>                
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -37,6 +37,7 @@
                 <li <? if($pag == 'produtos') 	{ ?> class="active" <? } ?>><a href="produtos">Produtos</a></li>
                 <li <? if($pag == 'servicos') 	{ ?> class="active" <? } ?>><a href="servicos">Serviços</a></li>
                 <li <? if($pag == 'contato') 	{ ?> class="active" <? } ?>><a href="contato">Contato</a></li>
+                <li <? if($pag == 'login') 		{ ?> class="active" <? } ?>><a href="login">Area Restrita</a></li>
             </ul>
         
             <form class="navbar-form navbar-left" role="search" action="pesquisa" method="post">

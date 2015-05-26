@@ -3,7 +3,7 @@
 
 $db_local = "localhost";
 $db_user  = "root";
-$db_pass  = "";
+$db_pass  = "1178101228";
 $db_banco = "db_aula";
 
 return array(

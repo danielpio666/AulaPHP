@@ -20,6 +20,18 @@ $tab_txt = "CREATE TABLE IF NOT EXISTS paginas (
 $conect->query($tab_txt);
 echo "OK! <br>";
 
+echo "..:: Criando Tabela Usuarios ::..";
+
+$tab_txt = "CREATE TABLE IF NOT EXISTS usuarios (
+		       	usu_id int(11) NOT NULL AUTO_INCREMENT,
+		       	usu_login varchar(10) NOT NULL,
+  				usu_senha varchar(40),
+  			PRIMARY KEY (usu_id))";
+
+$conect->query($tab_txt);
+echo "OK! <br>";
+
+
 echo "..:: Limpando a Tabela Paginas ::..";
 $conect->query("TRUNCATE TABLE paginas");
 echo "OK! <br>";
@@ -52,6 +64,15 @@ $pag_conteudo = "Pagina serviços, texto de exemplo  : eu quero que você volte 
 $grv_exe = $conect->prepare('INSERT INTO paginas (pag_modulo, pag_conteudo) VALUES (:mod, :txt)');
 $grv_exe->bindValue(":mod", $pag_modulo);
 $grv_exe->bindValue(":txt", $pag_conteudo);
+$grv_exe->execute();
+
+echo "OK! <br>";
+
+$txt_login   = "admin";
+$txt_senha   = md5('admin');
+$grv_exe = $conect->prepare('INSERT INTO usuarios (usu_login, usu_senha) VALUES (:lgn, :psw)');
+$grv_exe->bindValue(":lgn", $txt_login);
+$grv_exe->bindValue(":psw", $txt_senha);
 $grv_exe->execute();
 
 echo "OK! <br>";
