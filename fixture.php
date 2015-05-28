@@ -25,7 +25,7 @@ echo "..:: Criando Tabela Usuarios ::..";
 $tab_txt = "CREATE TABLE IF NOT EXISTS usuarios (
 		       	usu_id int(11) NOT NULL AUTO_INCREMENT,
 		       	usu_login varchar(10) NOT NULL,
-  				usu_senha varchar(40),
+  				usu_senha varchar(60),
   			PRIMARY KEY (usu_id))";
 
 $conect->query($tab_txt);
@@ -35,6 +35,11 @@ echo "OK! <br>";
 echo "..:: Limpando a Tabela Paginas ::..";
 $conect->query("TRUNCATE TABLE paginas");
 echo "OK! <br>";
+
+echo "..:: Limpando a Tabela Usuarios ::..";
+$conect->query("TRUNCATE TABLE usuarios");
+echo "OK! <br>";
+
 
 echo "..:: Inserindo dados na Tabela Paginas ::..";
 
@@ -68,8 +73,10 @@ $grv_exe->execute();
 
 echo "OK! <br>";
 
+echo "..:: Inserindo dados na Tabela Usuarios ::..";
+
 $txt_login   = "admin";
-$txt_senha   = md5('admin');
+$txt_senha   = password_hash('admin', PASSWORD_DEFAULT);
 $grv_exe = $conect->prepare('INSERT INTO usuarios (usu_login, usu_senha) VALUES (:lgn, :psw)');
 $grv_exe->bindValue(":lgn", $txt_login);
 $grv_exe->bindValue(":psw", $txt_senha);

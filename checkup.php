@@ -4,23 +4,21 @@
 	$conect   = conexaoDB();
 	
 	$usuario  = $_POST['usuario'];
-	$senha    = md5($_POST['senha']);
+	$senha    = $_POST['senha'];
 	
-	$chk_txt  = "SELECT * FROM usuarios WHERE usu_login = '".$usuario."' AND usu_senha = '".$senha."'";
-	$chk_exe  = $conect->query($chk_txt);
-	$chkresul = $chk_exe->fetchColumn();
-	$check    = 0;
-	
-	if ($chkresul == 0) {
-		$check = 0;
-		echo "<script>alert('Usuario ou Senha Incorretos!!!'); window.location.href='login';</script>";
-		break;
-	} else {
-		$_SESSION['check'] = 1;
-		foreach ($chk_exe as $row) {
-			$_SESSION['usuario_on'] = $row['usu_login'];
+	$check    = 0;	
+	$chk_txt  = "SELECT * FROM usuarios WHERE usu_login = '".$usuario."'";
+	$chk_exe  = $conect->query($chk_txt)->fetchAll();
+
+	foreach ($chk_exe as $row) {
+		if (password_verify($senha, $row[2])) {   // Função foi refeita mas infelismente não funciona ja pesquisei na internet e nao existe nada que me mostre o porque do erro !!!
+			$_SESSION['check'] = 1;
+			$_SESSION['usuario_on'] = $row[1];
+			echo "<script>window.location.href='painel';</script>";
+		} else {
+			echo "<script>alert('Senha Incorreta!!!'); window.location.href='login';</script>";
+			break;
 		}
-		echo "<script>window.location.href='painel';</script>";
-		break;
 	}
+	echo "<script>alert('Usuario Incorreto!!!'); window.location.href='login';</script>";
 ?>
