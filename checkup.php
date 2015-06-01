@@ -11,7 +11,7 @@
 	$chk_exe  = $conect->query($chk_txt)->fetchAll();
 
 	foreach ($chk_exe as $row) {
-		if (password_verify($senha, $row[2])) {   // Função foi refeita mas infelismente não funciona ja pesquisei na internet e nao existe nada que me mostre o porque do erro !!!
+		if (password_verify($senha, $row[2])) {   
 			$_SESSION['check'] = 1;
 			$_SESSION['usuario_on'] = $row[1];
 			echo "<script>window.location.href='painel';</script>";
